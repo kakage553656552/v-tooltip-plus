@@ -8,7 +8,7 @@
     "type": "git",
     "url": "https://github.com/kakage553656552/v-tooltip-plus"
   },
-  "homepage": "https://github.com/kakage553656552/v-tooltip-plus",
+  "homepage": "https://kakage553656552.github.io/v-tooltip-plus/",
   "bugs": {
     "url": "https://github.com/kakage553656552/v-tooltip-plus/issues"
   },
@@ -21,10 +21,12 @@
     "build:umd": "cross-env TARGET=umd webpack --config webpack.config.js",
     "build:umd-min": "cross-env TARGET=umdMin webpack --config webpack.config.js",
     "build:common": "cross-env TARGET=commonjs webpack --config webpack.config.js",
+    "build:example": "webpack --config examples/webpack.config.js",
     "dev": "webpack --config webpack.config.js --watch",
     "lint": "eslint src",
     "prepublishOnly": "npm run build",
-    "example": "webpack serve --config examples/webpack.config.js"
+    "example": "webpack serve --config examples/webpack.config.js",
+    "deploy": "npm run build:example && gh-pages -d dist-examples -b gh-pages"
   },
   "keywords": [
     "vue",
@@ -43,6 +45,8 @@
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
+    "ajv": "^8.17.1",
+    "ajv-keywords": "^5.1.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "cross-env": "^7.0.3",
@@ -50,6 +54,7 @@
     "element-ui": "^2.15.0",
     "eslint": "^7.18.0",
     "eslint-plugin-vue": "^7.4.1",
+    "gh-pages": "^6.3.0",
     "html-webpack-plugin": "^5.0.0",
     "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^5.1.1",
