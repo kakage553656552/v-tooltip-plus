@@ -1,0 +1,57 @@
+{
+  "name": "v-tooltip-plus",
+  "version": "1.0.0",
+  "description": "增强的Vue tooltip指令，基于Element UI，支持文本溢出自动显示提示",
+  "main": "dist/v-tooltip-plus.common.js",
+  "unpkg": "dist/v-tooltip-plus.umd.min.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "types"
+  ],
+  "scripts": {
+    "build": "npm run build:umd && npm run build:umd-min && npm run build:common",
+    "build:umd": "cross-env TARGET=umd webpack --config webpack.config.js",
+    "build:umd-min": "cross-env TARGET=umdMin webpack --config webpack.config.js",
+    "build:common": "cross-env TARGET=commonjs webpack --config webpack.config.js",
+    "dev": "webpack --config webpack.config.js --watch",
+    "lint": "eslint src",
+    "prepublishOnly": "npm run build",
+    "example": "webpack serve --config examples/webpack.config.js"
+  },
+  "keywords": [
+    "vue",
+    "directive",
+    "tooltip",
+    "element-ui",
+    "overflow",
+    "ellipsis"
+  ],
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "element-ui": "^2.13.0",
+    "vue": "^2.6.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.0.1",
+    "element-ui": "^2.15.0",
+    "eslint": "^7.18.0",
+    "eslint-plugin-vue": "^7.4.1",
+    "html-webpack-plugin": "^5.0.0",
+    "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^5.1.1",
+    "vue": "^2.6.12",
+    "vue-loader": "^15.9.6",
+    "vue-template-compiler": "^2.6.12",
+    "webpack": "^5.17.0",
+    "webpack-cli": "^4.4.0",
+    "webpack-dev-server": "^4.0.0-beta.0"
+  }
+}
