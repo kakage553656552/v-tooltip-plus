@@ -2,10 +2,6 @@
 
 基于Element UI的增强版Vue tooltip指令，提供更友好、更灵活的tooltip功能。
 
-## 在线演示
-
-🔗 [在线示例](https://kakage553656552.github.io/v-tooltip-plus/)
-
 ## 特点
 
 - 📦 封装Element UI Tooltip为Vue指令，使用更简洁
