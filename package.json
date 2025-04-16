@@ -1,14 +1,20 @@
 {
   "name": "v-tooltip-plus",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "增强的Vue tooltip指令，基于Element UI，支持文本溢出自动显示提示",
   "main": "dist/v-tooltip-plus.common.js",
   "unpkg": "dist/v-tooltip-plus.umd.min.js",
-  "types": "types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kakage553656552/v-tooltip-plus"
+  },
+  "homepage": "https://github.com/kakage553656552/v-tooltip-plus",
+  "bugs": {
+    "url": "https://github.com/kakage553656552/v-tooltip-plus/issues"
+  },
   "files": [
     "dist",
-    "src",
-    "types"
+    "src"
   ],
   "scripts": {
     "build": "npm run build:umd && npm run build:umd-min && npm run build:common",
