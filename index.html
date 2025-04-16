@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>v-tooltip-plus - 增强的Vue tooltip指令</title>
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <script src="https://unpkg.com/vue@2.6.12/dist/vue.min.js"></script>
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script src="./v-tooltip-plus.umd.min.js"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    header {
+      background-color: #409EFF;
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    .description {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+    }
+    .demo-section {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      border-radius: 4px;
+      border: 1px solid #EBEEF5;
+      box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    }
+    .el-tooltip-item {
+      max-width: 300px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .ellipsis-text {
+      max-width: 200px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      border: 1px solid #eee;
+      padding: 8px;
+      margin: 8px 0;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #f8f9fa;
+      border-top: 1px solid #e9ecef;
+    }
+    a {
+      color: #409EFF;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div class="container">
+        <h1>v-tooltip-plus</h1>
+        <p class="description">增强的Vue tooltip指令，基于Element UI，支持文本溢出自动显示提示</p>
+        <div>
+          <a href="https://github.com/kakage553656552/v-tooltip-plus" target="_blank" class="el-button el-button--primary">GitHub</a>
+          <a href="https://www.npmjs.com/package/v-tooltip-plus" target="_blank" class="el-button el-button--default">NPM</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <h2>基本用法</h2>
+      <div class="demo-section">
+        <div v-tooltip="'这是一个简单的提示文本'">
+          鼠标悬停查看提示
+        </div>
+        
+        <div v-tooltip="{content: '这是自定义配置的提示', placement: 'right', effect: 'dark'}">
+          自定义提示配置
+        </div>
+      </div>
+
+      <h2>文本溢出自动提示</h2>
+      <div class="demo-section">
+        <div class="ellipsis-text" v-tooltip-overflow>
+          这是一段很长的文本，当它超出容器宽度时，会自动显示完整文本作为提示。这是v-tooltip-plus的核心功能。
+        </div>
+        
+        <div class="ellipsis-text" v-tooltip-overflow="{ placement: 'top', effect: 'dark' }">
+          这是另一段较长的文本，使用了自定义的提示样式和位置，当文本溢出时会自动显示提示。
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>Copyright © 2023 v-tooltip-plus. MIT Licensed.</p>
+        <p><a href="https://github.com/kakage553656552/v-tooltip-plus" target="_blank">GitHub</a> | <a href="https://www.npmjs.com/package/v-tooltip-plus" target="_blank">NPM</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 安装组件
+    Vue.use(VTooltipPlus);
+
+    new Vue({
+      el: '#app'
+    });
+  </script>
+</body>
+</html> 

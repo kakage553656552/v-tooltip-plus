@@ -1,0 +1,25 @@
+# 开发文件
+node_modules
+.vscode
+.idea
+.git
+.github
+.gitignore
+.editorconfig
+.npmrc
+
+# 构建配置
+webpack.config.js
+babel.config.js
+.eslintrc.js
+.eslintignore
+
+# 源码相关
+src/directives/examples
+tests
+demo
+examples
+
+# 其他
+*.log
+.DS_Store 
